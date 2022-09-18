@@ -1,0 +1,198 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block title %}
+Signup
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'account/css/signup.css' %}">
+{%endblock%}
+
+{% block content %}
+<div class="split left">
+    <div class="centered">
+    </div>
+  </div>
+  
+  <div class="split right">
+    <div class="centered">
+        <div>
+        <img src="{% static 'account/images/loan.png' %}" style="width: 100px; height: 100px;">
+        <span style="color:#225A69; font-weight:1000; font-size: larger; font-family: poppins; ">CrowdFunding</span>
+        </div>
+        <br>
+        <form class="form-horizontal" method="POST">
+            <!-- <div class="col-md-12">{% if form.errors %}{% for field in form %}{% for error in field.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong><strong>{{ field|escape }}</strong></div>
+                {% endfor %}{% endfor %}{% for error in form.non_field_errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div> -->
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col">
+                <label style="color:#225A69; font-weight: 900;"> First Name:</label>
+                <input type="text" required class="form-control" name="first_name" placeholder="First name" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);">
+                </div>
+                {% if form.first_name.errors %}{% for error in form.first_name.errors %}
+                <div class="error"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+
+                <br>
+                
+                <div class="col">
+                <label style="color:#225A69; font-weight: 900;"> Last Name:</label>
+                <input type="text" required class="form-control" name="last_name" placeholder="Last name" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);">
+                </div>
+                {% if form.last_name.errors %}{% for error in form.last_name.errors %}
+                <div class="error"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+
+                <br>
+
+                <div class="col">
+                    <label style="color:#225A69; font-weight: 900;"> UserName:</label>
+                    <input type="text" required class="form-control" name="username" placeholder="username" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);">
+                    </div>
+                    {% if form.username.errors %}{% for error in form.username.errors %}
+                    <div class="error"><strong>{{ error|escape }}</strong></div>
+                    {% endfor %}{% endif %}
+    
+                    <br>
+
+                <div class="form-group col-md-6">
+                <label for="inputEmail4" style="color:#225A69; font-weight: 900;">Email:</label>
+                <input type="email" required class="form-control" name="email" id="inputEmail4" placeholder="Email" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);">
+                </div>
+                {% if form.email.errors %}{% for error in form.email.errors %}
+                <div class="error"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+
+                <br>
+
+                <div class="form-group col-md-6">
+                <label for="inputPassword4" style="color:#225A69; font-weight: 900;">Password:</label>
+                <input type="password" required name="password1" class="form-control" id="inputPassword4" placeholder="Password" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);"><br>
+                <small id="passwordHelpBlock" class="form-text text-muted" style="color:lightgrey ;">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters.
+                </small>
+                </div>
+                {% if form.password1.errors %}{% for error in form.password1.errors %}
+                <div class="error"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+
+                <br>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4" style="color:#225A69; font-weight: 900;">C. Password:</label>
+                    <input type="password" required name="password2" class="form-control" id="inputPassword4" placeholder="Same Password" style="border-radius:10px; width: 200px; height: 30px; border-color:rgb(181, 180, 180);"><br>
+                    </div>
+    
+                    <br>
+                    {% if form.password2.errors %}{% for error in form.password2.errors %}
+                    <div class="error"><strong>{{ error|escape }}</strong></div>
+                    {% endfor %}{% endif %}
+
+                <div class="form-group form-check">
+                    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                    {{ form.check }}
+                    <label class="form-check-label" for="exampleCheck1" style="color:#225A69; font-weight: 900;">I accept all the Terms & Conditions</label>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default" style="background-color:#225A69; color: #FAA71B ; font-weight: 600; border-radius: 8px; width: 200px; height: 40px; cursor: pointer;">Register</button>
+                    </div>                   
+            </div>
+            
+                <div class="container signin">
+                    <p style="color:grey;">Already have an account? <a href="{% url 'login' %}" style="color:#FAA71B; font-weight: 900;">Log in</a>.</p>
+                    <!-- <p style="color:grey;"> ______ or sign up with ______</p>
+                    <a href="{% url 'social:begin' 'facebook' %}" class="fa fa-facebook" style="color:#225A69;"></a>
+                    <a href="#" class="fa fa-github" style="color:#FAA71B;"></a>
+                    <a href="#" class="fa fa-google" style="color:#225A69;"></a>
+                    <a href="#" class="fa fa-linkedin" style="color:#FAA71B;"></a>
+                    <a href="#" class="fa fa-twitter" style="color:#225A69;"></a> -->
+
+
+
+
+                </div>
+              </div>
+            </div>
+            <br>
+            
+            </div>
+          </form>
+          <!-- <form class="login-form" method="POST">
+            {% csrf_token %}
+            <div class="col-md-12">{% if form.errors %}{% for field in form %}{% for error in field.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong><strong>{{ field|escape }}</strong></div>
+                {% endfor %}{% endfor %}{% for error in form.non_field_errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="form-group position-relative"><label>First name <span class="text-danger">*</span></label>{{form.first_name}}
+                </div>
+                {% if form.first_name.errors %}{% for error in form.first_name.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-6">
+                <div class="form-group position-relative"><label>Last name <span class="text-danger">*</span></label>{{form.last_name}}
+                </div>
+                {% if form.last_name.errors %}{% for error in form.last_name.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-12">
+                <div class="form-group position-relative"><label>Your Email <span class="text-danger">*</span></label>{{form.email}}
+                </div>
+                {% if form.email.errors %}{% for error in form.email.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-12">
+                <div class="form-group position-relative"><label>Username <span class="text-danger">*</span></label>{{form.username}}
+                </div>
+                {% if form.username.errors %}{% for error in form.username.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+        
+            <div class="col-md-12">
+                <div class="form-group position-relative"><label>Password <span class="text-danger">*</span></label>{{form.password1}}
+                </div>
+                {% if form.password1.errors %}{% for error in form.password1.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-12">
+                <div class="form-group position-relative"><label>Confirm Password <span class="text-danger">*</span></label>{{form.password2}}
+                </div>
+                {% if form.password2.errors %}{% for error in form.password2.errors %}
+                <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                {% endfor %}{% endif %}
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="custom-control">{{form.check}}<label>I Accept <a href="" class="text-primary">Terms
+                        And Condition</a></label></div>
+                    {% if form.check.errors %}{% for error in form.check.errors %}
+                    <div class="alert alert-danger"><strong>{{ error|escape }}</strong></div>
+                    {% endfor %}{% endif %}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-primary w-100" type="submit">Register</button>
+            </div>
+            <div class="mx-auto"><p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a
+                    href="{% url 'login' %}" class="text-dark font-weight-bold">Sign in</a></p></div>
+        </form> -->
+    </div>
+</div>
+
+{% endblock %}
+    
+
+
