@@ -1,0 +1,71 @@
+{% extends 'base/template.html' %} {% load static %} 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'base/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/css/footer.css' %}" />
+{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-expand-lg">
+  <!-- Brand -->
+  <a class="navbar-brand" href="{% url 'project_home' %}">
+    <img
+      src="{% static 'base/imgs/funding-white-bk.png' %}"
+      width="40"
+      height="40"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    CrowdFunding
+  </a>
+  <!-- Search -->
+  <form class="form-inline search">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"
+          ><img
+            src="{% static 'base/imgs/search-maincolor-bk.png' %}"
+            width="20"
+        /></span>
+      </div>
+      <input
+        list="test"
+        type="text"
+        class="form-control search-input"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="basic-addon1"
+      />
+      <datalist id="test">
+        <option value="GOT"></option>
+        <option value="Better Call Saul"></option>
+        <option value="Breakin Bad"></option>
+      </datalist>
+    </div>
+  </form>
+  <!-- Dropdown -->
+  <div class="btn-group">
+    <button
+      type="button"
+      class="btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      data-bs-display="static"
+      aria-expanded="false"
+    >
+      <img
+        class="profile-image"
+        src="{% static 'base/imgs/profile-image.png' %}"
+      />
+    </button>
+    <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-start">
+      <li ><a class="dropdown-item" href="#">Profile</a></li>
+      <li ><a class="dropdown-item" href="#">Edit Profile</a></li>
+      <li ><a class="dropdown-item" href="#">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block footer %}
+<div class='footer-div'>
+    <p class='copyright'>&copy; Copyright 2023, ITI Corporation</p>
+</div>
+{% endblock %}

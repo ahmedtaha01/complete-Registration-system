@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'project/css/create.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/css/footer.css' %}" />
+{% endblock css %}
+{% load crispy_forms_tags %}
+{% block title %}Update Project{% endblock title %}
+{% block content %}
+<div class="card">
+  <div class="card-header">Update Project</div>
+  <div class="card-body create-form">
+    <form class="" method="POST">
+      {% csrf_token %} {{form|crispy }}
+      <div class="btns">
+        <button type="submit" class="btn btn-submit">Create</button>
+        <a href="#" class="btn btn-return">Return</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

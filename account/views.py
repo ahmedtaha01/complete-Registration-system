@@ -1,6 +1,6 @@
 
-from django.shortcuts import render 
-from django.http import HttpResponse
+from django.shortcuts import render ,redirect
+from django.http import HttpResponse 
 from django.contrib import messages
 from .forms import RegisterForm
 from django.core.mail import EmailMessage
@@ -20,7 +20,7 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def socialHomeView(request):
-    return render(request,'social_home/home.html')
+    return redirect('/project')
 
 
 # ////////////
@@ -98,7 +98,7 @@ def signin(request):
             return render(request, 'registration/login.html', {'form': form,'error':'invalid username or password'})
             # return HttpResponse("Invalid credentials.")
         login(request, user)
-        return render(request,'home/home.html')
+        return redirect('/project')
 
 
 def home(request):

@@ -1,0 +1,16 @@
+.footer-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5A8E9C;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px 0px 7px 0px #5A8E9C;
+}
+
+.copyright{
+    color: white;
+    padding: 0px;
+    margin: 5px;
+}
