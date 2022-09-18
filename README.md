@@ -3,7 +3,7 @@
 
 add :
 
-  1 - "pip install django-auth-app-django"
+  1 - "pip install social-auth-app-django"
   
   2 - "pip install django-sslserver"
   
@@ -11,7 +11,7 @@ add :
   
   4 - "pip install psycopg2"
   
-  5 - "pip install django-six"
+  5 - "pip install six"
   
   python manage.py makemigrations
   
