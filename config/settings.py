@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'categories.apps.CategoriesConfig',
     'project.apps.ProjectConfig',
     'comment.apps.CommentConfig',
+    'donation.apps.DonationConfig',
     
 ]
 
@@ -183,8 +184,8 @@ MEDIA_URL = '/media/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ahmedmohamedtaha2002@gmail.com'      #      ccrowdfundingg@gmail.com
-EMAIL_HOST_PASSWORD = 'fynlsfiddctadpwd'            #        bnpstdlbbmdgfooy
+EMAIL_HOST_USER = 'ccrowdfundingg@gmail.com'      #          ahmedmohamedtaha2002@gmail.com
+EMAIL_HOST_PASSWORD = 'bnpstdlbbmdgfooy'            #        fynlsfiddctadpwd
 EMAIL_PORT = 587
 
 

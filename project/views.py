@@ -42,3 +42,6 @@ class DeleteProject(DeleteView):
     model = Project
     template_name: str = 'project/view.html'
     success_url = reverse_lazy('project_home')
+
+
+    

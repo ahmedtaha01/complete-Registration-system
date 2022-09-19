@@ -32,6 +32,7 @@ urlpatterns = [
     path('login/', signin, name='login'),
     path('',include('password.urls')),
     path('project/', include('project.urls')),
-    path('comment/',include('comment.urls'))
+    path('comment/',include('comment.urls')),
+    path('donate/',include('donation.urls'))
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

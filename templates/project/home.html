@@ -5,7 +5,24 @@
     <ul>
         {% for project in all_projects %}
             <li>{{project.project_title}} - id: {{project.id}}</li>
+            {% for comment in project.comments.all %}
+            <ul>
+                {% if comment.user.id == request.user.id %}
+                <li> me </li>
+                {% else %}
+                <li>{{ comment.user }} </li>
+                {%endif%}
+                
+                <li>{{ comment.comment }}</li>
+            </ul>
+            {% endfor %}
         {% endfor %}
     </ul>
-    
+    {{ request.user.id }}
+
+    <form action="2/create" method="POST">
+        {% csrf_token %}
+        <textarea name="content" cols="30" rows="4"></textarea>
+        <button type="submit">add</button>
+    </form>
 {% endblock %}
