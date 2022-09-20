@@ -5,6 +5,11 @@
     <ul>
         {% for project in all_projects %}
             <li>{{project.project_title}} - id: {{project.id}}</li>
+            {% for donate in project.donations.all %}
+                {{ donate.user }} : {{ donate.amount }}
+
+
+            {% endfor %}
             {% for comment in project.comments.all %}
             <ul>
                 {% if comment.user.id == request.user.id %}
@@ -14,6 +19,7 @@
                 {%endif%}
                 
                 <li>{{ comment.comment }}</li>
+                <li>{{ comment.created_at }}</li>
             </ul>
             {% endfor %}
         {% endfor %}
